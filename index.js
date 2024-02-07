@@ -14,9 +14,9 @@ const { connectDatabase, mongooseInstance } = require('./db.config');
 // const communityRouter = require('./src/routes/Community/index');
 // const chatRouter = require('./src/routes/Chat/index');
 
+// const { checkInactiveUsers } = require('./src/middlewares/inactiveUser');
 
 
-const { checkInactiveUsers } = require('./src/middlewares/inactiveUser');
 const User = require('./src/modules/User/user');
 
 // Constants
@@ -53,11 +53,11 @@ app.get('/', (req, res) => {
 });
 
 // Middleware
-app.use("/api/auth", authRouter);
-app.use("/api/user", userRouter);
-app.use("/api/otp", otpRouter);
-app.use("/api/chat", chatRouter);
-app.use("/api/community", communityRouter);
+// app.use("/api/auth", authRouter);
+// app.use("/api/user", userRouter);
+// app.use("/api/otp", otpRouter);
+// app.use("/api/chat", chatRouter);
+// app.use("/api/community", communityRouter);
 // Starting the server after connecting to the database
 connectDatabase()
   .then(async () => {
