@@ -1,8 +1,8 @@
-const User = require('../../modules/User/user')
+const User = require('../../modules/User/users')
 
 const onboardUser = async (req, res) => {
 
-    const { username, number, bio, hometown, gender, hobbies  } = req.body;
+    const { username, number, bio, location  } = req.body;
     const userId = req.params.userId;
 
     try{
@@ -15,9 +15,7 @@ const onboardUser = async (req, res) => {
         user.username = username;
         user.number = number;
         user.bio = bio;
-        user.hometown = hometown;
-        user.gender = gender;
-        user.hobbies = hobbies;
+        user.location = location;
 
         // Save the updated user object to the database
         await user.save();

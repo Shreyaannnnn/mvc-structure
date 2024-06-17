@@ -9,7 +9,7 @@ async function connectDatabase() {
   }
 
   try {
-    await mongoose.connect("mongodb+srv://shreyanbharadwaj:misschanandlerbong@cluster0.7djkwrb.mongodb.net/ref3r/?retryWrites=true&w=majority");
+    await mongoose.connect("mongourl");
     isConnected = true;
   } catch (error) {
     console.error('Could not connect to the database', error);
